@@ -8,13 +8,12 @@ import glob
 import webbrowser
 import time
 from tqdm import tqdm
-
 from kedro.pipeline import Pipeline, node, pipeline
-
 from typing import Dict
 from typing import List
-
 from datetime import datetime
+
+BAR_FORMAT = "{l_bar}{bar:10}{r_bar}{bar:-10b}"
 
 
 def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
@@ -22,70 +21,78 @@ def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=create_code_folder_raw,
-                inputs=["params:sg_reits"],
+                inputs=["params:categories", "params:stocks"],
                 outputs=None,
-                name="create_code_folder_raw_sg_reits",
+                name="create_code_folder_raw",
             ),
             node(
                 func=download_raw,
-                inputs=["params:sg_reits"],
+                inputs=["params:categories", "params:stocks"],
                 outputs=None,
-                name="download_raw_sg_reits",
+                name="download_raw",
             ),
             node(
                 func=move_process_remove_raw,
-                inputs=["params:sg_reits"],
+                inputs=["params:categories", "params:stocks"],
                 outputs=None,
-                name="process_raw_sg_reits",
+                name="process_raw",
             ),
         ]
     )
 
 
-def create_code_folder_raw(parameter_stock: Dict[str, str]) -> None:
-    for stock in tqdm(parameter_stock):
-        code_full = _get_stock_code_full(stock["name"])
-        code = code_full.split(".")[0]
-        _create_code_folder(code)
+def create_code_folder_raw(
+    parameter_categories: List[str], parameter_stock: Dict[str, str]
+) -> None:
+    for category in parameter_categories:
+        for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
+            code_full = _get_stock_code_full(stock["name"])
+            code = code_full.split(".")[0]
+            _create_code_folder(code)
 
 
-def download_raw(parameter_stock: Dict[str, str]) -> None:
-    for stock in tqdm(parameter_stock):
-        code_full = _get_stock_code_full(stock["name"])
-        code = code_full.split(".")[0]
+def download_raw(
+    parameter_categories: List[str], parameter_stock: Dict[str, str]
+) -> None:
+    for category in parameter_categories:
+        for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
+            code_full = _get_stock_code_full(stock["name"])
+            code = code_full.split(".")[0]
 
-        stock_max_period1 = stock["yahoo_max_period1"]
-        _download_raw_file(
-            f"{code}_div.csv", _raw_div_file_url(code_full, stock_max_period1)
-        )
-        # allow time for download to complete
-        time.sleep(3)
+            stock_max_period1 = stock["yahoo_max_period1"]
+            raw_div_file_url = _raw_div_file_url(code_full, stock_max_period1)
+            _download_raw_file(f"{code}_div.csv", raw_div_file_url)
+            # allow time for download to complete
+            time.sleep(3)
 
-        _download_raw_file(
-            f"{code}.csv", _raw_price_file_url(code_full, stock_max_period1)
-        )
-        # allow time for download to complete
-        time.sleep(3)
+            raw_price_file_url = _raw_price_file_url(code_full, stock_max_period1)
+            _download_raw_file(f"{code}.csv", raw_price_file_url)
+            # allow time for download to complete
+            time.sleep(3)
 
 
-def move_process_remove_raw(parameter_stock: Dict[str, str]) -> None:
+def move_process_remove_raw(
+    parameter_categories: List[str], parameter_stock: Dict[str, str]
+) -> None:
     _move_download_files_to_data_folder()
 
-    for stock in tqdm(parameter_stock):
-        code_full = _get_stock_code_full(stock["name"])
-        code = code_full.split(".")[0]
+    for category in parameter_categories:
+        for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
+            code_full = _get_stock_code_full(stock["name"])
+            code = code_full.split(".")[0]
 
-        # csv_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + ".csv"))
-        # info_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_info.csv"))
-        # div_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_div.csv"))
+            # csv_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + ".csv"))
+            # info_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_info.csv"))
+            # div_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_div.csv"))
 
-        _process_all_raw_files(code)
+            _process_all_primary_raw_files(code)
+            _process_all_intermediate_raw_files(code)
 
-    _remove_download_files()
+        _remove_download_files()
 
 
 def _get_stock_code_full(stock_name: str) -> str:
-    """Function will return the stock code from input stock name
+    """Return the stock code from input stock name
     The code of stock name are in the format eg H02.SI, 0468.HK
 
     Args:
@@ -104,14 +111,14 @@ def _get_stock_code_full(stock_name: str) -> str:
     return str(code)
 
 
-def _create_code_folder(code: str):
-    """Function will create new folder with code as name if its not exist yet.
+def _create_code_folder(code: str) -> None:
+    """Create new folder with code as name if its not exist yet.
 
     Args:
         code (str): stock code
     """
     main_folders = [
-        "data/02_intermediate",
+        "data/03_primary",
         "data/07_model_artifacts",
         "data/08_reporting",
     ]
@@ -186,10 +193,12 @@ def _raw_price_file_url(code_full: str, stock_max_period1: str) -> str:
     return url
 
 
-def _move_download_files_to_data_folder():
+def _move_download_files_to_data_folder() -> None:
+    """Move all files in Downloads to data/02_intermediate"""
+
     # specify the directories
     source_dir_path = os.path.join("..", "..", "Downloads")
-    destination_directory_path = os.path.join("data", "01_raw")
+    destination_directory_path = os.path.join("data", "02_intermediate")
 
     # List all files in the source folder
     files = os.listdir(source_dir_path)
@@ -201,9 +210,30 @@ def _move_download_files_to_data_folder():
         shutil.move(src_file, destination_directory_path)
 
 
-def _process_all_raw_files(code: str):
-    """Copy file to folder ../02_intermediate and rename from <code>.SI.csv to <code>.csv
-    Copy file to folder ../02_intermediate and rename from <code>(1).SI.csv to <code>_div.csv
+def _process_all_primary_raw_files(code: str) -> None:
+    """Copy all info files to folder ../02_intermediate
+
+    Args:
+        code (str): stock code
+    """
+
+    # specify the directories
+    source_dir_path = os.path.join("data", "01_raw")
+    destination_directory_path = os.path.join("data", "02_intermediate")
+
+    # use glob to match the file pattern code
+    files = glob.glob(os.path.join(source_dir_path, code + ".info.csv"))
+
+    for _file in files:
+        # make a copy of the file
+        shutil.copy(_file, destination_directory_path)
+
+
+def _process_all_intermediate_raw_files(code: str) -> None:
+    """Copy file to folder ../02_intermediate and rename from <code>.info.csv to <code>_info.csv
+    Copy file to folder ../03_primary and rename from <code>.SI.csv to <code>.csv
+    Copy file to folder ../03_primary and rename from <code>(1).SI.csv to <code>_div.csv
+    Remove all files from ../02_intermediate
 
     Args:
         code (str): stock code
@@ -217,8 +247,8 @@ def _process_all_raw_files(code: str):
     }
 
     # specify the directories
-    source_dir_path = os.path.join("data", "01_raw")
-    destination_directory_path = os.path.join("data", "02_intermediate", code)
+    source_dir_path = os.path.join("data", "02_intermediate")
+    destination_directory_path = os.path.join("data", "03_primary", code)
 
     # use glob to match the file pattern code
     files = glob.glob(os.path.join(source_dir_path, code + "*"))
@@ -243,15 +273,17 @@ def _process_all_raw_files(code: str):
             os.remove(original_file_path)
 
 
-def _remove_download_files():
+def _remove_download_files() -> None:
+    """Remove all files in Downloads folder"""
+
     # specify the directories
     source_dir_path = os.path.join("..", "..", "Downloads")
-    destination_directory_path = os.path.join("data", "01_raw")
 
     # List all files in the source folder
     files = os.listdir(source_dir_path)
 
     for _file in files:
         src_file = os.path.join(source_dir_path, _file)
+
         # Use os.remove() to delete the file
         os.remove(src_file)

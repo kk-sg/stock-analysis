@@ -1,10 +1,11 @@
 years_window: 5, 10
 categories: 
-  - sg_reits
-  - sg_share
-  - hk_reits
-  - hk_share
-sg_reits:
+- sg_reits
+- sg_share
+- hk_reits
+- hk_share
+stocks:
+  sg_reits:
   - name: CapitaLand Ascendas REIT (A17U.SI)
     date_format: "%Y-%m-%d"
     category: sg_reits
@@ -148,7 +149,7 @@ sg_reits:
     industrial: False
     integrated_development: False
 
-hk_reits:
+  hk_reits:
   - name: Link Real Estate Investment Trust (0823.HK)
     date_format: "%Y-%m-%d"
     category: hk_reits
@@ -162,7 +163,7 @@ hk_reits:
     industrial: False
     integrated_development: False
 
-sg_share:
+  sg_share:
   - name: Hong Kong Land (H78.SI)
     date_format: "%Y-%m-%d"
     category: sg_share
@@ -191,7 +192,7 @@ sg_share:
     yahoo: https://finance.yahoo.com/quote/s61.si/history
     yahoo_max_period1: 946857600
 
-hk_share:
+  hk_share:
   - name: Hang Lung Group (0010.HK)
     date_format: "%Y-%m-%d"
     category: hk_share
