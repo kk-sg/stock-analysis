@@ -21,12 +21,12 @@ repos:
       - id: black-jupyter
         language_version: python3.10
     # Using Ruff as the linter
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.0.282
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix, --show-fixes]
-        types_or: [python, jupyter]
+  # - repo: https://github.com/astral-sh/ruff-pre-commit
+  #   rev: v0.0.282
+  #   hooks:
+  #     - id: ruff
+  #       args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+  #       types_or: [python, jupyter]
   - repo: https://github.com/kynan/nbstripout
     rev: 0.6.1
     hooks:

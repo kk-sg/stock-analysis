@@ -1,5 +1,19 @@
-years_window: 5, 10
-categories: 
+main_folders:
+- data/03_primary
+- data/04_feature
+- data/07_model_artifacts
+- data/08_reporting
+
+primary_data_folder: data/03_primary
+feature_data_folder: data/04_feature
+
+years_window:
+- 5
+- 10
+
+stock_date_format: "%Y-%m-%d"
+
+categories:
 - sg_reits
 - sg_share
 - hk_reits
@@ -7,7 +21,6 @@ categories:
 stocks:
   sg_reits:
   - name: CapitaLand Ascendas REIT (A17U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/a17u.si/history
@@ -20,7 +33,6 @@ stocks:
     integrated_development: False
 
   - name: Keppel DC REIT (AJBU.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/ajbu.si/history
@@ -33,7 +45,6 @@ stocks:
     integrated_development: False
 
   - name: CapitaLand China Trust (AU8U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/au8u.si/history
@@ -46,7 +57,6 @@ stocks:
     integrated_development: False
 
   - name: Parkway Life Real Estate Investment Trust (C2PU.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/c2pu.si/history
@@ -59,7 +69,6 @@ stocks:
     integrated_development: False
 
   - name: CapitaLand Integrated Commercial Trust (C38U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/c38u.si/history
@@ -72,7 +81,6 @@ stocks:
     integrated_development: True
 
   - name: Frasers Centrepoint Trust (J69U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/j69u.si/history
@@ -85,7 +93,6 @@ stocks:
     integrated_development: False
 
   - name: Mapletree Logistics Trust (M44U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/m44u.si/history
@@ -98,7 +105,6 @@ stocks:
     integrated_development: False
 
   - name: Mapletree Industrial Trust (ME8U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/me8u.si/history
@@ -111,7 +117,6 @@ stocks:
     integrated_development: False
 
   - name: Mapletree Pan Asia Commercial Trust (N2IU.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/n2iu.si/history
@@ -124,7 +129,6 @@ stocks:
     integrated_development: False
 
   - name: Paragon REIT (SK6U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/sk6u.si/history
@@ -137,7 +141,6 @@ stocks:
     integrated_development: False
 
   - name: Suntec Real Estate Investment Trust (T82U.SI)
-    date_format: "%Y-%m-%d"
     category: sg_reits
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/t82u.si/history
@@ -151,7 +154,6 @@ stocks:
 
   hk_reits:
   - name: Link Real Estate Investment Trust (0823.HK)
-    date_format: "%Y-%m-%d"
     category: hk_reits
     currency: HKD
     yahoo: https://finance.yahoo.com/quote/0823.hk/history
@@ -165,28 +167,24 @@ stocks:
 
   sg_share:
   - name: Hong Kong Land (H78.SI)
-    date_format: "%Y-%m-%d"
     category: sg_share
     currency: USD
     yahoo: https://finance.yahoo.com/quote/h78.si/history
     yahoo_max_period1: 946857600
 
   - name: Haw Par Corporation Limited (H02.SI)
-    date_format: "%Y-%m-%d"
     category: sg_share
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/h02.si/history
     yahoo_max_period1: 946857600
 
   - name: NetLink NBN Trust (CJLU.SI)
-    date_format: "%Y-%m-%d"
     category: sg_share
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/cjlu.si/history
     yahoo_max_period1: 1500508800
 
   - name: SBS Transit Ltd (S61.SI)
-    date_format: "%Y-%m-%d"
     category: sg_share
     currency: SGD
     yahoo: https://finance.yahoo.com/quote/s61.si/history
@@ -194,71 +192,61 @@ stocks:
 
   hk_share:
   - name: Hang Lung Group (0010.HK)
-    date_format: "%Y-%m-%d"
     category: hk_share
     currency: HKD
     yahoo: https://finance.yahoo.com/quote/0010.HK/history
     yahoo_max_period1: 946944000
 
   - name: Hang Lung Properties Limited (0101.HK)
-    date_format: "%Y-%m-%d"
     category: hk_share
     currency: HKD
     yahoo: https://finance.yahoo.com/quote/0101.HK/history
     yahoo_max_period1: 946944000
 
   - name: CK Infrastructure Holdings Limited (1038.HK)
-    date_format: "%Y-%m-%d"
     category: hk_share
     currency: HKD
     yahoo: https://finance.yahoo.com/quote/1038.HK/history
     yahoo_max_period1: 946944000
 
   - name: Wharf Real Estate Investment Company Limited (1997.HK)
-    date_format: "%Y-%m-%d"
     category: hk_share
     currency: HKD
     yahoo: https://finance.yahoo.com/quote/1997.HK/history
     yahoo_max_period1: 1510704000
 
-  - name: Sun Hung Kai Properties Limited (0016.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/0016.HK/history
-    yahoo_max_period1: 946944000
+  # - name: Sun Hung Kai Properties Limited (0016.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0016.HK/history
+  #   yahoo_max_period1: 946944000
 
-  - name: Swire Pacific Limited (0019.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/0019.HK/history
-    yahoo_max_period1: 946944000
+  # - name: Swire Pacific Limited (0019.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0019.HK/history
+  #   yahoo_max_period1: 946944000
 
-  - name: HKBN Ltd. (1310.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/1310.HK/history
-    yahoo_max_period1: 1426118400
+  # - name: HKBN Ltd. (1310.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/1310.HK/history
+  #   yahoo_max_period1: 1426118400
 
-  - name: MTR Corporation Limited (0066.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/0066.HK/history
-    yahoo_max_period1: 971049600
+  # - name: MTR Corporation Limited (0066.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0066.HK/history
+  #   yahoo_max_period1: 971049600
 
-  - name: TravelSky Technology Limited (0696.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/0696.HK/history
-    yahoo_max_period1: 981590400
+  # - name: TravelSky Technology Limited (0696.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0696.HK/history
+  #   yahoo_max_period1: 981590400
 
-  - name: Greatview Aseptic Packaging Company Limited (0468.HK)
-    date_format: "%Y-%m-%d"
-    category: hk_share
-    currency: HKD
-    yahoo: https://finance.yahoo.com/quote/0468.HK/history
-    yahoo_max_period1: 1291852800
+  # - name: Greatview Aseptic Packaging Company Limited (0468.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0468.HK/history
+  #   yahoo_max_period1: 1291852800

@@ -1,9 +1,4 @@
-"""
-This is a boilerplate pipeline 'download_raw_pipeline'
-generated using Kedro 0.18.13
-"""
-
-from kedro.pipeline import Pipeline, pipeline
+from kedro.pipeline import Pipeline
 from .download_raw_nodes import download_process_move_raw_pipeline
 
 

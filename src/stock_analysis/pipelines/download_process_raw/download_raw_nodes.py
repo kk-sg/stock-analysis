@@ -1,6 +1,3 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 import re
 import os
 import shutil
@@ -21,7 +18,7 @@ def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=create_code_folder_raw,
-                inputs=["params:categories", "params:stocks"],
+                inputs=["params:categories", "params:stocks", "params:main_folders"],
                 outputs=None,
                 name="create_code_folder_raw",
             ),
@@ -34,26 +31,46 @@ def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
             node(
                 func=move_process_remove_raw,
                 inputs=["params:categories", "params:stocks"],
-                outputs=None,
+                outputs="dummy_raw_node_sequencer",
                 name="process_raw",
+            ),
+            node(
+                func=pipeline_sequencer,
+                inputs="dummy_raw_node_sequencer",
+                outputs="dummy_raw_pipeline_sequencer",
+                name="raw_pipeline_sequencer",
             ),
         ]
     )
 
 
+def pipeline_sequencer(dummy_sequencer: str = "") -> str:
+    return ""
+
+
 def create_code_folder_raw(
-    parameter_categories: List[str], parameter_stock: Dict[str, str]
+    parameter_categories: List[str],
+    parameter_stock: Dict[str, str],
+    main_folders: List[str],
 ) -> None:
+    print("=== Creating Required Folders ===")
+
     for category in parameter_categories:
         for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
             code_full = _get_stock_code_full(stock["name"])
             code = code_full.split(".")[0]
-            _create_code_folder(code)
+            _create_code_folder(code, main_folders)
+
+            print(f"=== Created Required Folders: {stock['name']} ===")
+
+    print("=== Created All Required Folders ===")
 
 
 def download_raw(
     parameter_categories: List[str], parameter_stock: Dict[str, str]
 ) -> None:
+    print("=== Downloading Raw Files ===")
+
     for category in parameter_categories:
         for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
             code_full = _get_stock_code_full(stock["name"])
@@ -70,25 +87,32 @@ def download_raw(
             # allow time for download to complete
             time.sleep(3)
 
+            print(f"=== Downloaded Raw File: {stock['name']} ===")
+
+    print("=== Downloaded All Raw Files ===")
+
 
 def move_process_remove_raw(
     parameter_categories: List[str], parameter_stock: Dict[str, str]
-) -> None:
+) -> str:
     _move_download_files_to_data_folder()
+
+    print("=== Moving Files to Respective Folders ===")
 
     for category in parameter_categories:
         for stock in tqdm(parameter_stock[category], bar_format=BAR_FORMAT):
             code_full = _get_stock_code_full(stock["name"])
             code = code_full.split(".")[0]
 
-            # csv_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + ".csv"))
-            # info_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_info.csv"))
-            # div_files.append(os.path.join("..", "..", "data", "02_intermediate", code, code + "_div.csv"))
-
             _process_all_primary_raw_files(code)
             _process_all_intermediate_raw_files(code)
+            print(f"=== Moved Files to Respective Folders: {stock['name']} ===")
 
         _remove_download_files()
+
+    print("=== Moved All Files to Respective Folders ===")
+
+    return ""
 
 
 def _get_stock_code_full(stock_name: str) -> str:
@@ -111,17 +135,13 @@ def _get_stock_code_full(stock_name: str) -> str:
     return str(code)
 
 
-def _create_code_folder(code: str) -> None:
+def _create_code_folder(code: str, main_folders: List[str]) -> None:
     """Create new folder with code as name if its not exist yet.
 
     Args:
         code (str): stock code
+        main_folders (str): list of main folder to create subfolder named code
     """
-    main_folders = [
-        "data/03_primary",
-        "data/07_model_artifacts",
-        "data/08_reporting",
-    ]
 
     for folder in main_folders:
         sub_folder = os.path.join(folder, code)
@@ -206,7 +226,7 @@ def _move_download_files_to_data_folder() -> None:
     # Move each file to the target folder
     for _file in files:
         src_file = os.path.join(source_dir_path, _file)
-        dst_file = os.path.join(destination_directory_path, _file)
+        os.path.join(destination_directory_path, _file)
         shutil.move(src_file, destination_directory_path)
 
 
