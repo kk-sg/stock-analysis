@@ -45,6 +45,7 @@ def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
 
 
 def pipeline_sequencer(dummy_sequencer: str = "") -> str:
+    """Just to ensure pipeline runs in sequence"""
     return ""
 
 
@@ -53,6 +54,19 @@ def create_code_folder_raw(
     parameter_stock: Dict[str, str],
     main_folders: List[str],
 ) -> None:
+    """
+    Creates required folders for each stock in each category.
+
+    This function iterates over categories and stocks, and creates a folder for each stock in the main folders.
+
+    Args:
+        parameter_categories (List[str]): A list of categories.
+        parameter_stock (Dict[str, str]): A dictionary of stocks.
+        main_folders (List[str]): A list of main folders where the new folders should be created.
+
+    Returns:
+        None
+    """
     print("=== Creating Required Folders ===")
 
     for category in parameter_categories:
@@ -69,6 +83,19 @@ def create_code_folder_raw(
 def download_raw(
     parameter_categories: List[str], parameter_stock: Dict[str, str]
 ) -> None:
+    """
+    Downloads raw files for each stock in each category.
+
+    This function iterates over categories and stocks, constructs URLs for the dividend and price files of each stock,
+    and downloads these files. It also includes a delay to allow time for each download to complete.
+
+    Args:
+        parameter_categories (List[str]): A list of categories.
+        parameter_stock (Dict[str, str]): A dictionary of stocks.
+
+    Returns:
+        None
+    """
     print("=== Downloading Raw Files ===")
 
     for category in parameter_categories:
@@ -95,6 +122,19 @@ def download_raw(
 def move_process_remove_raw(
     parameter_categories: List[str], parameter_stock: Dict[str, str]
 ) -> str:
+    """
+    Moves, processes, and removes raw files.
+
+    This function moves downloaded files to a data folder, processes all primary and intermediate raw files,
+    and removes the downloaded files. It iterates over categories and stocks to perform these operations.
+
+    Args:
+        parameter_categories (List[str]): A list of categories.
+        parameter_stock (Dict[str, str]): A dictionary of stocks.
+
+    Returns:
+        str: An empty string. The function does not return any meaningful value but performs file operations as a side effect.
+    """
     _move_download_files_to_data_folder()
 
     print("=== Moving Files to Respective Folders ===")

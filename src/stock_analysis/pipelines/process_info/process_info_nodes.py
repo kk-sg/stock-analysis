@@ -57,6 +57,21 @@ def merge_info(
     stock_date_format: str,
     dummy_sequencer: str = "",
 ) -> str:
+    """Merges information from different data sources.
+
+    This function walks through the primary data folder and identifies csv files with specific endings.
+    It then merges the identified files and saves the merged data into a new csv file in the feature data folder.
+
+    Args:
+        primary_data_folder (str): The path to the primary data folder.
+        feature_data_folder (str): The path to the feature data folder.
+        years_window (List[str]): A list of year periods for which the merging should be done.
+        stock_date_format (str): The date format used in the stock data.
+        dummy_sequencer (str, optional): A dummy sequencer to ensure pipeline runs in sequence. Defaults to "".
+
+    Returns:
+        str: An empty string. The function does not return any meaningful value but performs merging operation as a side effect.
+    """
     print("=== Merging Info ===")
     for year_period in years_window:
         for root, dirs, files in os.walk(primary_data_folder):
@@ -167,6 +182,22 @@ def update_stock_info_dict(
     info_dict: Dict[str, str],
     dummy_sequencer: str = "",
 ):
+    """
+    Updates a dictionary with stock information.
+
+    This function iterates over categories and stocks, reads merged data for each stock from a csv file,
+    and updates the information dictionary for each stock.
+
+    Args:
+        feature_data_folder (str): The path to the feature data folder.
+        categories (str): The categories of stocks.
+        stocks (Dict[str, str]): A dictionary of stocks.
+        info_dict (Dict[str, str]): A dictionary to be updated with stock information.
+        dummy_sequencer (str, optional): A dummy sequencer to ensure pipeline runs in sequence. Defaults to "".
+
+    Returns:
+        Dict[str, str]: The updated dictionary with stock information.
+    """
     print("=== Updating Stock Info ===")
     for category in categories:
         for stock in stocks[category]:
