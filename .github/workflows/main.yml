@@ -24,6 +24,3 @@ jobs:
       - name: Build Jupyter Book
         run: jupyter-book build docs/stockinfo
 
-      - name: Deploy to GitHub Pages
-        run: |
-          ghp-import -n -p -f mybookname/_build/html
