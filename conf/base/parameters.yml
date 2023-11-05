@@ -1,15 +1,19 @@
 main_folders:
 - data/03_primary
 - data/04_feature
-- data/07_model_artifacts
-- data/08_reporting
+- docs/stockinfo
 
 primary_data_folder: data/03_primary
 feature_data_folder: data/04_feature
+report_folder: docs/stockinfo
 
 years_window:
 - 5
 - 10
+
+report_types:
+  dy: Dividend Yield
+  pb: Price-to-Book
 
 stock_date_format: "%Y-%m-%d"
 
@@ -18,6 +22,7 @@ categories:
 - sg_share
 - hk_reits
 - hk_share
+
 stocks:
   sg_reits:
   - name: CapitaLand Ascendas REIT (A17U.SI)

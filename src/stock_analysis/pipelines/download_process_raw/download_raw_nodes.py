@@ -31,22 +31,11 @@ def download_process_move_raw_pipeline(**kwargs) -> Pipeline:
             node(
                 func=move_process_remove_raw,
                 inputs=["params:categories", "params:stocks"],
-                outputs="dummy_raw_node_sequencer",
-                name="process_raw",
-            ),
-            node(
-                func=pipeline_sequencer,
-                inputs="dummy_raw_node_sequencer",
                 outputs="dummy_raw_pipeline_sequencer",
-                name="raw_pipeline_sequencer",
+                name="process_raw",
             ),
         ]
     )
-
-
-def pipeline_sequencer(dummy_sequencer: str = "") -> str:
-    """Just to ensure pipeline runs in sequence"""
-    return ""
 
 
 def create_code_folder_raw(
@@ -202,7 +191,7 @@ def _download_raw_file(filename: str, raw_file_url: str) -> None:
         raw_file_url (str): raw file url
         filename (str): filename to save in Downloads folder
     """
-    print(raw_file_url)
+    # print(raw_file_url)
     webbrowser.open(raw_file_url)
 
 

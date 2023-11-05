@@ -1,16 +1,8 @@
-# import matplotlib.pyplot as plt
-# import numpy as np
-# import re
-# import shutil
-# import glob
-# import webbrowser
-# from tqdm import tqdm
 import os
 import pandas as pd
 import json
 from kedro.pipeline import Pipeline, node, pipeline
 from typing import Dict, List
-
 from datetime import datetime
 from stock_analysis.pipelines.download_process_raw.download_raw_nodes import (
     _get_stock_code_full,
@@ -40,10 +32,15 @@ def process_info_pipeline(**kwargs) -> Pipeline:
                     "params:feature_data_folder",
                     "params:categories",
                     "params:stocks",
-                    "info_dict",
+                    "info_dict_5",
+                    "info_dict_10",
                     "dummy_process_info_node_sequencer",
                 ],
-                outputs="update_info_dict",
+                outputs=[
+                    "update_info_dict_5",
+                    "update_info_dict_10",
+                    "dummy_update_stock_node_sequencer",
+                ],
                 name="update_stock_info_dict",
             ),
         ]
@@ -98,7 +95,9 @@ def merge_info(
                     years_window=year_period,
                 )
                 merged_file_path = os.path.join(
-                    feature_data_folder, stock, stock + "_merged.csv"
+                    feature_data_folder,
+                    stock,
+                    stock + "_merged_" + str(year_period) + ".csv",
                 )
                 df_merged.to_csv(merged_file_path, index=False)
 
@@ -156,30 +155,12 @@ def _df_merging(
     return df_filtered
 
 
-def _save_dict(
-    dict_data: Dict[str, float], save_path: str, filename: str
-) -> Dict[str, float]:
-    """Function will save dict as json file in save_path folder
-
-    Args:
-        dict_data (Dict[str, float]): dictionary to save
-        filename (str): json filename to save
-        save_path (str): saving path
-
-    Returns:
-        Dict[str, float]: loaded info_dict.json
-    """
-    filepath = os.path.join(save_path, filename)
-
-    with open(filepath, "w") as f:
-        json.dump(dict_data, f)
-
-
 def update_stock_info_dict(
     feature_data_folder: str,
     categories: str,
     stocks: Dict[str, str],
-    info_dict: Dict[str, str],
+    info_dict_5: Dict[str, str],
+    info_dict_10: Dict[str, str],
     dummy_sequencer: str = "",
 ):
     """
@@ -199,22 +180,34 @@ def update_stock_info_dict(
         Dict[str, str]: The updated dictionary with stock information.
     """
     print("=== Updating Stock Info ===")
+
     for category in categories:
         for stock in stocks[category]:
             stock_name = stock["name"]
             code_full = _get_stock_code_full(stock_name)
             code = code_full.split(".")[0]
 
-            df_merged_path = os.path.join(
-                feature_data_folder, code, code + "_merged.csv"
-            )
-            df_merged = pd.read_csv(df_merged_path)
+            print(f"=== Updating Stock Info (5 years): {stock_name} ===")
 
-            updated_info_dict = _stock_info(df_merged, stock_name, info_dict)
-            print(f"=== Updating Stock Info: {stock_name} ===")
+            df_merged_path_5 = os.path.join(
+                feature_data_folder, code, code + "_merged_5.csv"
+            )
+            df_merged_5 = pd.read_csv(df_merged_path_5)
+
+            updated_info_dict_5 = _stock_info(df_merged_5, stock_name, info_dict_5)
+
+            print(f"=== Updating Stock Info (10 years): {stock_name} ===")
+
+            df_merged_path_10 = os.path.join(
+                feature_data_folder, code, code + "_merged_10.csv"
+            )
+            df_merged_10 = pd.read_csv(df_merged_path_10)
+
+            updated_info_dict_10 = _stock_info(df_merged_10, stock_name, info_dict_10)
+
     print("=== Updated Stock Info ===")
 
-    return updated_info_dict
+    return updated_info_dict_5, updated_info_dict_10, ""
 
 
 def _stock_info(

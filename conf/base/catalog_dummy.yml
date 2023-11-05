@@ -1,11 +1,19 @@
-dummy_node_sequencer:
-  type: text.TextDataSet
-  filepath: data/dummy/dummy_node_sequencer.txt
-
 dummy_raw_pipeline_sequencer:
   type: text.TextDataSet
-  filepath: data/dummy/dummy_raw_pipeline_sequencer.txt
+  filepath: data/04_feature/dummy.txt
 
 dummy_process_info_node_sequencer:
   type: text.TextDataSet
-  filepath: data/dummy/dummy_process_info_node_sequencer.txt
+  filepath: data/04_feature/dummy.txt
+
+dummy_update_stock_node_sequencer:
+  type: text.TextDataSet
+  filepath: data/04_feature/dummy.txt
+
+dummy_plot_info_pipeline_sequencer:
+  type: text.TextDataSet
+  filepath: data/04_feature/dummy.txt
+
+dummy_report_info_pipeline_sequencer:
+  type: text.TextDataSet
+  filepath: data/04_feature/dummy.txt

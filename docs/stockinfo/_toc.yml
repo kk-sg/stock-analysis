@@ -1,9 +1,259 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: index
+parts:
+
+  - caption: sg_reits
+    numbered: true
+    chapters:
+
+        - title: CapitaLand Ascendas REIT (A17U.SI) (Dividend Yield, 5 years)
+          file: A17U/A17U_dy_5_years.md
+
+        - title: CapitaLand Ascendas REIT (A17U.SI) (Dividend Yield, 10 years)
+          file: A17U/A17U_dy_10_years.md
+
+        - title: CapitaLand Ascendas REIT (A17U.SI) (Price-to-Book, 5 years)
+          file: A17U/A17U_pb_5_years.md
+
+        - title: CapitaLand Ascendas REIT (A17U.SI) (Price-to-Book, 10 years)
+          file: A17U/A17U_pb_10_years.md
+
+        - title: Keppel DC REIT (AJBU.SI) (Dividend Yield, 5 years)
+          file: AJBU/AJBU_dy_5_years.md
+
+        - title: Keppel DC REIT (AJBU.SI) (Dividend Yield, 10 years)
+          file: AJBU/AJBU_dy_10_years.md
+
+        - title: Keppel DC REIT (AJBU.SI) (Price-to-Book, 5 years)
+          file: AJBU/AJBU_pb_5_years.md
+
+        - title: Keppel DC REIT (AJBU.SI) (Price-to-Book, 10 years)
+          file: AJBU/AJBU_pb_10_years.md
+
+        - title: CapitaLand China Trust (AU8U.SI) (Dividend Yield, 5 years)
+          file: AU8U/AU8U_dy_5_years.md
+
+        - title: CapitaLand China Trust (AU8U.SI) (Dividend Yield, 10 years)
+          file: AU8U/AU8U_dy_10_years.md
+
+        - title: CapitaLand China Trust (AU8U.SI) (Price-to-Book, 5 years)
+          file: AU8U/AU8U_pb_5_years.md
+
+        - title: CapitaLand China Trust (AU8U.SI) (Price-to-Book, 10 years)
+          file: AU8U/AU8U_pb_10_years.md
+
+        - title: Parkway Life Real Estate Investment Trust (C2PU.SI) (Dividend Yield, 5 years)
+          file: C2PU/C2PU_dy_5_years.md
+
+        - title: Parkway Life Real Estate Investment Trust (C2PU.SI) (Dividend Yield, 10 years)
+          file: C2PU/C2PU_dy_10_years.md
+
+        - title: Parkway Life Real Estate Investment Trust (C2PU.SI) (Price-to-Book, 5 years)
+          file: C2PU/C2PU_pb_5_years.md
+
+        - title: Parkway Life Real Estate Investment Trust (C2PU.SI) (Price-to-Book, 10 years)
+          file: C2PU/C2PU_pb_10_years.md
+
+        - title: CapitaLand Integrated Commercial Trust (C38U.SI) (Dividend Yield, 5 years)
+          file: C38U/C38U_dy_5_years.md
+
+        - title: CapitaLand Integrated Commercial Trust (C38U.SI) (Dividend Yield, 10 years)
+          file: C38U/C38U_dy_10_years.md
+
+        - title: CapitaLand Integrated Commercial Trust (C38U.SI) (Price-to-Book, 5 years)
+          file: C38U/C38U_pb_5_years.md
+
+        - title: CapitaLand Integrated Commercial Trust (C38U.SI) (Price-to-Book, 10 years)
+          file: C38U/C38U_pb_10_years.md
+
+        - title: Frasers Centrepoint Trust (J69U.SI) (Dividend Yield, 5 years)
+          file: J69U/J69U_dy_5_years.md
+
+        - title: Frasers Centrepoint Trust (J69U.SI) (Dividend Yield, 10 years)
+          file: J69U/J69U_dy_10_years.md
+
+        - title: Frasers Centrepoint Trust (J69U.SI) (Price-to-Book, 5 years)
+          file: J69U/J69U_pb_5_years.md
+
+        - title: Frasers Centrepoint Trust (J69U.SI) (Price-to-Book, 10 years)
+          file: J69U/J69U_pb_10_years.md
+
+        - title: Mapletree Logistics Trust (M44U.SI) (Dividend Yield, 5 years)
+          file: M44U/M44U_dy_5_years.md
+
+        - title: Mapletree Logistics Trust (M44U.SI) (Dividend Yield, 10 years)
+          file: M44U/M44U_dy_10_years.md
+
+        - title: Mapletree Logistics Trust (M44U.SI) (Price-to-Book, 5 years)
+          file: M44U/M44U_pb_5_years.md
+
+        - title: Mapletree Logistics Trust (M44U.SI) (Price-to-Book, 10 years)
+          file: M44U/M44U_pb_10_years.md
+
+        - title: Mapletree Industrial Trust (ME8U.SI) (Dividend Yield, 5 years)
+          file: ME8U/ME8U_dy_5_years.md
+
+        - title: Mapletree Industrial Trust (ME8U.SI) (Dividend Yield, 10 years)
+          file: ME8U/ME8U_dy_10_years.md
+
+        - title: Mapletree Industrial Trust (ME8U.SI) (Price-to-Book, 5 years)
+          file: ME8U/ME8U_pb_5_years.md
+
+        - title: Mapletree Industrial Trust (ME8U.SI) (Price-to-Book, 10 years)
+          file: ME8U/ME8U_pb_10_years.md
+
+        - title: Mapletree Pan Asia Commercial Trust (N2IU.SI) (Dividend Yield, 5 years)
+          file: N2IU/N2IU_dy_5_years.md
+
+        - title: Mapletree Pan Asia Commercial Trust (N2IU.SI) (Dividend Yield, 10 years)
+          file: N2IU/N2IU_dy_10_years.md
+
+        - title: Mapletree Pan Asia Commercial Trust (N2IU.SI) (Price-to-Book, 5 years)
+          file: N2IU/N2IU_pb_5_years.md
+
+        - title: Mapletree Pan Asia Commercial Trust (N2IU.SI) (Price-to-Book, 10 years)
+          file: N2IU/N2IU_pb_10_years.md
+
+        - title: Paragon REIT (SK6U.SI) (Dividend Yield, 5 years)
+          file: SK6U/SK6U_dy_5_years.md
+
+        - title: Paragon REIT (SK6U.SI) (Dividend Yield, 10 years)
+          file: SK6U/SK6U_dy_10_years.md
+
+        - title: Paragon REIT (SK6U.SI) (Price-to-Book, 5 years)
+          file: SK6U/SK6U_pb_5_years.md
+
+        - title: Paragon REIT (SK6U.SI) (Price-to-Book, 10 years)
+          file: SK6U/SK6U_pb_10_years.md
+
+        - title: Suntec Real Estate Investment Trust (T82U.SI) (Dividend Yield, 5 years)
+          file: T82U/T82U_dy_5_years.md
+
+        - title: Suntec Real Estate Investment Trust (T82U.SI) (Dividend Yield, 10 years)
+          file: T82U/T82U_dy_10_years.md
+
+        - title: Suntec Real Estate Investment Trust (T82U.SI) (Price-to-Book, 5 years)
+          file: T82U/T82U_pb_5_years.md
+
+        - title: Suntec Real Estate Investment Trust (T82U.SI) (Price-to-Book, 10 years)
+          file: T82U/T82U_pb_10_years.md
+
+  - caption: sg_share
+    numbered: true
+    chapters:
+
+        - title: Hong Kong Land (H78.SI) (Dividend Yield, 5 years)
+          file: H78/H78_dy_5_years.md
+
+        - title: Hong Kong Land (H78.SI) (Dividend Yield, 10 years)
+          file: H78/H78_dy_10_years.md
+
+        - title: Hong Kong Land (H78.SI) (Price-to-Book, 5 years)
+          file: H78/H78_pb_5_years.md
+
+        - title: Hong Kong Land (H78.SI) (Price-to-Book, 10 years)
+          file: H78/H78_pb_10_years.md
+
+        - title: Haw Par Corporation Limited (H02.SI) (Dividend Yield, 5 years)
+          file: H02/H02_dy_5_years.md
+
+        - title: Haw Par Corporation Limited (H02.SI) (Dividend Yield, 10 years)
+          file: H02/H02_dy_10_years.md
+
+        - title: Haw Par Corporation Limited (H02.SI) (Price-to-Book, 5 years)
+          file: H02/H02_pb_5_years.md
+
+        - title: Haw Par Corporation Limited (H02.SI) (Price-to-Book, 10 years)
+          file: H02/H02_pb_10_years.md
+
+        - title: NetLink NBN Trust (CJLU.SI) (Dividend Yield, 5 years)
+          file: CJLU/CJLU_dy_5_years.md
+
+        - title: NetLink NBN Trust (CJLU.SI) (Dividend Yield, 10 years)
+          file: CJLU/CJLU_dy_10_years.md
+
+        - title: NetLink NBN Trust (CJLU.SI) (Price-to-Book, 5 years)
+          file: CJLU/CJLU_pb_5_years.md
+
+        - title: NetLink NBN Trust (CJLU.SI) (Price-to-Book, 10 years)
+          file: CJLU/CJLU_pb_10_years.md
+
+        - title: SBS Transit Ltd (S61.SI) (Dividend Yield, 5 years)
+          file: S61/S61_dy_5_years.md
+
+        - title: SBS Transit Ltd (S61.SI) (Dividend Yield, 10 years)
+          file: S61/S61_dy_10_years.md
+
+        - title: SBS Transit Ltd (S61.SI) (Price-to-Book, 5 years)
+          file: S61/S61_pb_5_years.md
+
+        - title: SBS Transit Ltd (S61.SI) (Price-to-Book, 10 years)
+          file: S61/S61_pb_10_years.md
+
+  - caption: hk_reits
+    numbered: true
+    chapters:
+
+        - title: Link Real Estate Investment Trust (0823.HK) (Dividend Yield, 5 years)
+          file: 0823/0823_dy_5_years.md
+
+        - title: Link Real Estate Investment Trust (0823.HK) (Dividend Yield, 10 years)
+          file: 0823/0823_dy_10_years.md
+
+        - title: Link Real Estate Investment Trust (0823.HK) (Price-to-Book, 5 years)
+          file: 0823/0823_pb_5_years.md
+
+        - title: Link Real Estate Investment Trust (0823.HK) (Price-to-Book, 10 years)
+          file: 0823/0823_pb_10_years.md
+
+  - caption: hk_share
+    numbered: true
+    chapters:
+
+        - title: Hang Lung Group (0010.HK) (Dividend Yield, 5 years)
+          file: 0010/0010_dy_5_years.md
+
+        - title: Hang Lung Group (0010.HK) (Dividend Yield, 10 years)
+          file: 0010/0010_dy_10_years.md
+
+        - title: Hang Lung Group (0010.HK) (Price-to-Book, 5 years)
+          file: 0010/0010_pb_5_years.md
+
+        - title: Hang Lung Group (0010.HK) (Price-to-Book, 10 years)
+          file: 0010/0010_pb_10_years.md
+
+        - title: Hang Lung Properties Limited (0101.HK) (Dividend Yield, 5 years)
+          file: 0101/0101_dy_5_years.md
+
+        - title: Hang Lung Properties Limited (0101.HK) (Dividend Yield, 10 years)
+          file: 0101/0101_dy_10_years.md
+
+        - title: Hang Lung Properties Limited (0101.HK) (Price-to-Book, 5 years)
+          file: 0101/0101_pb_5_years.md
+
+        - title: Hang Lung Properties Limited (0101.HK) (Price-to-Book, 10 years)
+          file: 0101/0101_pb_10_years.md
+
+        - title: CK Infrastructure Holdings Limited (1038.HK) (Dividend Yield, 5 years)
+          file: 1038/1038_dy_5_years.md
+
+        - title: CK Infrastructure Holdings Limited (1038.HK) (Dividend Yield, 10 years)
+          file: 1038/1038_dy_10_years.md
+
+        - title: CK Infrastructure Holdings Limited (1038.HK) (Price-to-Book, 5 years)
+          file: 1038/1038_pb_5_years.md
+
+        - title: CK Infrastructure Holdings Limited (1038.HK) (Price-to-Book, 10 years)
+          file: 1038/1038_pb_10_years.md
+
+        - title: Wharf Real Estate Investment Company Limited (1997.HK) (Dividend Yield, 5 years)
+          file: 1997/1997_dy_5_years.md
+
+        - title: Wharf Real Estate Investment Company Limited (1997.HK) (Dividend Yield, 10 years)
+          file: 1997/1997_dy_10_years.md
+
+        - title: Wharf Real Estate Investment Company Limited (1997.HK) (Price-to-Book, 5 years)
+          file: 1997/1997_pb_5_years.md
+
+        - title: Wharf Real Estate Investment Company Limited (1997.HK) (Price-to-Book, 10 years)
+          file: 1997/1997_pb_10_years.md
