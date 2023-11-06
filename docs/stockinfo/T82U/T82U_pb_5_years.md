@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.51 | 1.08  |  |
-| Current | 0.52 | 1.10  | 2023-10-31 |
+| Current | 0.53 | 1.13  | 2023-11-03 |
 | Min | 0.44 | 0.90  | 2020-03-23 |
 | Max | 0.79 | 1.67  | 2022-04-27 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Suntec Real Estate Investment Trust (T82U.SI)](T82U_pb_5.png)
 

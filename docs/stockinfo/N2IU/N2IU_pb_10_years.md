@@ -2,12 +2,12 @@
 
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
-| Target | 0.59 | 1.04  |  |
-| Current | 0.76 | 1.33  | 2023-10-31 |
-| Min | 0.59 | 0.68  | 2014-01-23 |
-| Max | 1.27 | 2.04  | 2019-11-26 |
+| Target | 0.58 | 1.02  |  |
+| Current | 0.77 | 1.36  | 2023-11-03 |
+| Min | 0.58 | 0.67  | 2014-01-23 |
+| Max | 1.25 | 2.00  | 2019-11-26 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Mapletree Pan Asia Commercial Trust (N2IU.SI)](N2IU_pb_10.png)
 

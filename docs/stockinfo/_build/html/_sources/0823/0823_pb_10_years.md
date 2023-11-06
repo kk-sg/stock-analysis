@@ -2,12 +2,12 @@
 
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
-| Target | 0.51 | 37.67  |  |
-| Current | 0.49 | 35.90  | 2023-10-31 |
+| Target | 0.51 | 37.61  |  |
+| Current | 0.54 | 39.70  | 2023-11-03 |
 | Min | 0.48 | 35.45  | 2023-10-20 |
 | Max | 1.05 | 65.81  | 2018-12-07 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Link Real Estate Investment Trust (0823.HK)](0823_pb_10.png)
 

@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.20 | 3.03  |  |
-| Current | 0.21 | 3.17  | 2023-10-31 |
+| Current | 0.22 | 3.33  | 2023-11-03 |
 | Min | 0.19 | 2.97  | 2020-05-26 |
 | Max | 0.51 | 6.25  | 2015-05-26 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Hong Kong Land (H78.SI)](H78_pb_10.png)
 

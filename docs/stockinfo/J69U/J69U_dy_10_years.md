@@ -2,10 +2,10 @@
 
 |     | Yield   | Price | Date       |
 |-----|---------|-------|------------|
-| Target | 10.46 |  |  |
-| Current | 2.96 | 2.07  | 2023-10-31 |
-| Max | 10.60 | 1.02  | 2014-02-04 |
-| Min | 2.68 | 2.29  | 2023-04-14 |
+| Target | 10.09 |  |  |
+| Current | 5.81 | 2.09  | 2023-11-03 |
+| Max | 10.92 | 0.99  | 2014-02-04 |
+| Min | 3.65 | 2.50  | 2020-03-05 |
 
 ![Plot of Dividend Yield for Frasers Centrepoint Trust (J69U.SI)](J69U_div_10.png)
 

@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.94 | 1.32  |  |
-| Current | 1.21 | 1.69  | 2023-10-31 |
+| Current | 1.29 | 1.81  | 2023-11-03 |
 | Min | 0.94 | 1.08  | 2019-01-01 |
 | Max | 2.26 | 2.69  | 2020-08-05 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Keppel DC REIT (AJBU.SI)](AJBU_pb_5.png)
 

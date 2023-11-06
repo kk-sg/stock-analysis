@@ -2,12 +2,12 @@
 
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
-| Target | 0.59 | 1.38  |  |
-| Current | 0.89 | 2.07  | 2023-10-31 |
-| Min | 0.55 | 1.02  | 2014-02-04 |
-| Max | 1.14 | 2.58  | 2020-03-05 |
+| Target | 0.58 | 1.34  |  |
+| Current | 0.90 | 2.09  | 2023-11-03 |
+| Min | 0.54 | 0.99  | 2014-02-04 |
+| Max | 1.10 | 2.50  | 2020-03-05 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Frasers Centrepoint Trust (J69U.SI)](J69U_pb_10.png)
 

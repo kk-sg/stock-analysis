@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.32 | 9.52  |  |
-| Current | 0.35 | 10.42  | 2023-10-31 |
+| Current | 0.37 | 10.84  | 2023-11-03 |
 | Min | 0.32 | 9.52  | 2022-10-31 |
 | Max | 1.07 | 31.42  | 2014-08-25 |
 
-Last updated: 2023-10-31
+Last updated: 2023-11-03
 
 ![Plot of Price-Book ratio for Hang Lung Group (0010.HK)](0010_pb_10.png)
 
