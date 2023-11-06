@@ -26,4 +26,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          ghp-import -n -p -f _build/html
+          ghp-import -n -p -f build docs/stockinfo/_build/html
