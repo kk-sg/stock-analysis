@@ -1,0 +1,15 @@
+info_dict_5:
+  type: pandas.JSONDataSet
+  filepath: data/04_feature/info_dict_5.json
+
+info_dict_10:
+  type: pandas.JSONDataSet
+  filepath: data/04_feature/info_dict_10.json
+
+update_info_dict_5:
+  type: pandas.JSONDataSet
+  filepath: data/04_feature/info_dict_5.json
+
+update_info_dict_10:
+  type: pandas.JSONDataSet
+  filepath: data/04_feature/info_dict_10.json

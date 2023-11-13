@@ -1,43 +1,30 @@
-name: Build and Deploy
+name: main
+
 on:
+  schedule:
+    - cron: '0 13 * * *' # This line sets the action to run every day at 21:00 Singapore time (UTC+8)
   push:
     branches:
-      - main
+      - main # This line sets the action to run whenever there is a push to the main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11.5'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11.5'
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11.5' # replace '3.x' with your Python version
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        cd src
+        pip install -r requirements.txt
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          cd src
-          pip install -r requirements.txt
-
-      - name: Run Kedro
-        run: kedro run
-
-      # - name: Install dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install jupyter-book ghp-import
-
-      # - name: Build Jupyter Book
-      #   run: jupyter-book build docs/stockinfo
-
-      # - name: Deploy to GitHub Pages
-      #   run: |
-      #     ghp-import -n -p -f docs/stockinfo/_build/html
+    - name: Run Kedro
+      run: kedro run

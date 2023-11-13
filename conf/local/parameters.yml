@@ -1,0 +1,257 @@
+main_folders:
+- data/03_primary
+- data/04_feature
+- docs/stockinfo
+
+primary_data_folder: data/03_primary
+feature_data_folder: data/04_feature
+report_folder: docs/stockinfo
+
+years_window:
+- 5
+- 10
+
+report_types:
+  dy: Dividend Yield
+  pb: Price-to-Book
+
+stock_date_format: "%Y-%m-%d"
+
+categories:
+- sg_reits
+- sg_share
+- hk_reits
+- hk_share
+
+stocks:
+  sg_reits:
+  - name: CapitaLand Ascendas REIT (A17U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/a17u.si/history
+    yahoo_max_period1: 1128038400
+    sponsor: Capitaland (Temasek)
+    healthcare: False
+    retail: False
+    office: False
+    industrial: True
+    integrated_development: False
+
+  - name: Keppel DC REIT (AJBU.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/ajbu.si/history
+    yahoo_max_period1: 1418342400
+    sponsor: Keppel Corp
+    healthcare: False
+    retail: False
+    office: False
+    industrial: True
+    integrated_development: False
+
+  - name: CapitaLand China Trust (AU8U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/au8u.si/history
+    yahoo_max_period1: 1196294400
+    sponsor: CapitaMalls Asia Limited
+    healthcare: False
+    retail: True
+    office: False
+    industrial: False
+    integrated_development: False
+
+  - name: Parkway Life Real Estate Investment Trust (C2PU.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/c2pu.si/history
+    yahoo_max_period1: 1194393600
+    sponsor: Parkway Holdings Limited
+    healthcare: True
+    retail: False
+    office: False
+    industrial: False
+    integrated_development: False
+
+  - name: CapitaLand Integrated Commercial Trust (C38U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/c38u.si/history
+    yahoo_max_period1: 1194220800
+    sponsor: Capitaland (Temasek)
+    healthcare: False
+    retail: True
+    office: True
+    industrial: False
+    integrated_development: True
+
+  - name: Frasers Centrepoint Trust (J69U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/j69u.si/history
+    yahoo_max_period1: 1194307200
+    sponsor: Fraser Centrepoint Limited
+    healthcare: False
+    retail: True
+    office: False
+    industrial: False
+    integrated_development: False
+
+  - name: Mapletree Logistics Trust (M44U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/m44u.si/history
+    yahoo_max_period1: 1194307200
+    sponsor: Mapletree Investments Pte Ltd (Temasek)
+    healthcare: False
+    retail: False
+    office: False
+    industrial: True
+    integrated_development: False
+
+  - name: Mapletree Industrial Trust (ME8U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/me8u.si/history
+    yahoo_max_period1: 1287619200
+    sponsor: Mapletree Investments Pte Ltd (Temasek)
+    healthcare: False
+    retail: False
+    office: False
+    industrial: True
+    integrated_development: False
+
+  - name: Mapletree Pan Asia Commercial Trust (N2IU.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/n2iu.si/history
+    yahoo_max_period1: 1303862400
+    sponsor: Mapletree Commercial Trust Management Ltd (Temasek)
+    healthcare: False
+    retail: True
+    office: True
+    industrial: True
+    integrated_development: False
+
+  - name: Paragon REIT (SK6U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/sk6u.si/history
+    yahoo_max_period1: 1374624000
+    sponsor: SPH Limited
+    healthcare: False
+    retail: True
+    office: False
+    industrial: False
+    integrated_development: False
+
+  - name: Suntec Real Estate Investment Trust (T82U.SI)
+    category: sg_reits
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/t82u.si/history
+    yahoo_max_period1: 1194220800
+    sponsor: Straits Trading & ARA Asset Management
+    healthcare: False
+    retail: True
+    office: True
+    industrial: False
+    integrated_development: False
+
+  hk_reits:
+  - name: Link Real Estate Investment Trust (0823.HK)
+    category: hk_reits
+    currency: HKD
+    yahoo: https://finance.yahoo.com/quote/0823.hk/history
+    yahoo_max_period1: 1193788800
+    sponsor: ""
+    healthcare: False
+    retail: True
+    office: False
+    industrial: False
+    integrated_development: False
+
+  sg_share:
+  - name: Hong Kong Land (H78.SI)
+    category: sg_share
+    currency: USD
+    yahoo: https://finance.yahoo.com/quote/h78.si/history
+    yahoo_max_period1: 946857600
+
+  - name: Haw Par Corporation Limited (H02.SI)
+    category: sg_share
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/h02.si/history
+    yahoo_max_period1: 946857600
+
+  - name: NetLink NBN Trust (CJLU.SI)
+    category: sg_share
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/cjlu.si/history
+    yahoo_max_period1: 1500508800
+
+  - name: SBS Transit Ltd (S61.SI)
+    category: sg_share
+    currency: SGD
+    yahoo: https://finance.yahoo.com/quote/s61.si/history
+    yahoo_max_period1: 946857600
+
+  hk_share:
+  - name: Hang Lung Group (0010.HK)
+    category: hk_share
+    currency: HKD
+    yahoo: https://finance.yahoo.com/quote/0010.HK/history
+    yahoo_max_period1: 946944000
+
+  - name: Hang Lung Properties Limited (0101.HK)
+    category: hk_share
+    currency: HKD
+    yahoo: https://finance.yahoo.com/quote/0101.HK/history
+    yahoo_max_period1: 946944000
+
+  - name: CK Infrastructure Holdings Limited (1038.HK)
+    category: hk_share
+    currency: HKD
+    yahoo: https://finance.yahoo.com/quote/1038.HK/history
+    yahoo_max_period1: 946944000
+
+  - name: Wharf Real Estate Investment Company Limited (1997.HK)
+    category: hk_share
+    currency: HKD
+    yahoo: https://finance.yahoo.com/quote/1997.HK/history
+    yahoo_max_period1: 1510704000
+
+  # - name: Sun Hung Kai Properties Limited (0016.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0016.HK/history
+  #   yahoo_max_period1: 946944000
+
+  # - name: Swire Pacific Limited (0019.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0019.HK/history
+  #   yahoo_max_period1: 946944000
+
+  # - name: HKBN Ltd. (1310.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/1310.HK/history
+  #   yahoo_max_period1: 1426118400
+
+  # - name: MTR Corporation Limited (0066.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0066.HK/history
+  #   yahoo_max_period1: 971049600
+
+  # - name: TravelSky Technology Limited (0696.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0696.HK/history
+  #   yahoo_max_period1: 981590400
+
+  # - name: Greatview Aseptic Packaging Company Limited (0468.HK)
+  #   category: hk_share
+  #   currency: HKD
+  #   yahoo: https://finance.yahoo.com/quote/0468.HK/history
+  #   yahoo_max_period1: 1291852800
