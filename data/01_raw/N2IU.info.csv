@@ -1,0 +1,11 @@
+year,NAV,property_yield,property_yield_retail,property_yield_office,property_yield_integrated_development,debt_ratio,gearing_ratio,interest_coverage_ratio,wale,wale_retail,wale_office,wale_integrated_development,occupancy,occupancy_retail,occupancy_office,occupancy_integrated_development,occupancy_sg,occupancy_cn,occupancy_hk,occupancy_aus
+2014,1.16,0.048,,,,0.022,0.387,5.3,2,,,,0.982,,,,,,,
+2015,1.24,0.05,,,,0.023,0.364,5.3,2.1,,,,0.957,,,,,,,
+2016,1.30,0.051,,,,0.026,0.351,5,2.2,,,,0.966,,,,,,,
+2017,1.38,0.046,,,,0.027,0.363,4.9,2.7,,,,0.979,,,,,,,
+2018,1.49,0.051,,,,0.028,0.345,4.8,2.7,,,,0.946,,,,,,,
+2019,1.60,0.049,,,,0.03,0.331,4.5,2.9,,,,0.981,,,,,,,
+2020,1.75,0.042,,,,0.029,0.333,4.3,2.1,,,,0.987,,,,,,,
+2021,1.72,0.043,,,,0.025,0.339,4.4,2.4,,,,0.971,,,,,,,
+2022,1.74,0.044,,,,0.024,0.335,4.8,2.6,,,,0.97,,,,,,,
+2023,1.76,0.044,,,,0.027,0.409,3,2.6,,,,0.954,,,,,,,
