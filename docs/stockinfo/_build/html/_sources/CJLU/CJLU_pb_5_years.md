@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.88 | 0.59  |  |
-| Current | 1.24 | 0.84  | 2023-11-03 |
+| Current | 1.24 | 0.83  | 2023-11-10 |
 | Min | 0.77 | 0.60  | 2019-01-01 |
 | Max | 1.33 | 0.93  | 2022-01-04 |
 
-Last updated: 2023-11-03
+Last updated: 2023-11-10
 
 ![Plot of Price-Book ratio for NetLink NBN Trust (CJLU.SI)](CJLU_pb_5.png)
 

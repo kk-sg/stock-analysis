@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.97 | 1.79  |  |
-| Current | 1.18 | 2.19  | 2023-11-03 |
+| Current | 1.17 | 2.17  | 2023-11-10 |
 | Min | 0.97 | 1.46  | 2019-01-02 |
 | Max | 1.73 | 2.81  | 2020-09-18 |
 
-Last updated: 2023-11-03
+Last updated: 2023-11-10
 
 ![Plot of Price-Book ratio for Mapletree Industrial Trust (ME8U.SI)](ME8U_pb_5.png)
 

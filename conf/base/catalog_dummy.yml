@@ -17,3 +17,7 @@ dummy_plot_info_pipeline_sequencer:
 dummy_report_info_pipeline_sequencer:
   type: text.TextDataSet
   filepath: data/04_feature/dummy.txt
+
+dummy_update_toc_yml_pipeline_sequencer:
+  type: text.TextDataSet
+  filepath: data/04_feature/dummy.txt

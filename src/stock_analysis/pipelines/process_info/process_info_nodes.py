@@ -86,6 +86,10 @@ def merge_info(
                 else:
                     csv_file = file_path
 
+            print(f"Processing csv: {csv_file}")
+            print(f"Processing div: {div_file}")
+            print(f"Processing info: {info_file}")
+
             if csv_file != "":
                 df_merged = _df_merging(
                     csv_file=csv_file,

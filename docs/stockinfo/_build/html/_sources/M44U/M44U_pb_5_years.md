@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.84 | 1.21  |  |
-| Current | 1.07 | 1.54  | 2023-11-03 |
+| Current | 1.07 | 1.54  | 2023-11-10 |
 | Min | 0.84 | 0.99  | 2019-01-01 |
 | Max | 1.52 | 1.84  | 2020-08-04 |
 
-Last updated: 2023-11-03
+Last updated: 2023-11-10
 
 ![Plot of Price-Book ratio for Mapletree Logistics Trust (M44U.SI)](M44U_pb_5.png)
 

@@ -67,7 +67,7 @@ def create_code_folder_raw(
             print(f"=== Created Required Folders: {stock['name']} ===")
 
     # create Downlaods folder if not exist
-    dir_path = os.path.join("..", "..", "Downloads")
+    dir_path = os.path.join("..", "Downloads")
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
@@ -251,7 +251,7 @@ def _move_download_files_to_data_folder() -> None:
     """Move all files in Downloads to data/02_intermediate"""
 
     # specify the directories
-    source_dir_path = os.path.join("..", "..", "Downloads")
+    source_dir_path = os.path.join("..", "Downloads")
     destination_directory_path = os.path.join("data", "02_intermediate")
 
     # List all files in the source folder
@@ -331,7 +331,7 @@ def _remove_download_files() -> None:
     """Remove all files in Downloads folder"""
 
     # specify the directories
-    source_dir_path = os.path.join("..", "..", "Downloads")
+    source_dir_path = os.path.join("..", "Downloads")
 
     # List all files in the source folder
     files = os.listdir(source_dir_path)

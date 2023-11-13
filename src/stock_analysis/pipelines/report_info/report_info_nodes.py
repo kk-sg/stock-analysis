@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-import json
+import subprocess
 from kedro.pipeline import Pipeline, node, pipeline
 from typing import Dict, List
 from datetime import datetime
@@ -38,11 +38,24 @@ def report_info_pipeline(**kwargs) -> Pipeline:
                     "params:report_types",
                     "dummy_report_info_pipeline_sequencer",
                 ],
-                outputs=None,
+                outputs="dummy_update_toc_yml_pipeline_sequencer",
                 name="update_toc_yml",
+            ),
+            node(
+                func=jupyter_book_build_node,
+                inputs=[
+                    "dummy_update_toc_yml_pipeline_sequencer",
+                ],
+                outputs=None,
+                name="jupyter_book_build_node",
             ),
         ]
     )
+
+
+def jupyter_book_build_node(dummy_sequencer: str = "") -> None:
+    command = ["jupyter-book", "build", "./docs/stockinfo"]
+    subprocess.run(command, check=True)
 
 
 def update_toc_yml(
@@ -52,13 +65,15 @@ def update_toc_yml(
     years_window: List[str],
     report_types: Dict[str, str],
     dummy_sequencer: str = "",
-):
+) -> str:
     content_toc_string = _return_content_toc_string(
         categories, stocks, years_window, report_types
     )
 
     print(content_toc_string)
     _save_toc_yml_file(report_folder, content_toc_string)
+
+    return ""
 
 
 def _return_content_toc_string(categories, stocks, years_window, report_types):
