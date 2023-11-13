@@ -21,10 +21,10 @@ jobs:
     - name: Pull Docker image
       uses: docker/pull-action@v1
       with:
-        image: 'stock-analysis:latest'
+        image: 'klangkk/stock-analysis:latest'
     - name: Run Docker image
       uses: addnab/docker-run-action@v3
       with:
-        image: 'stock-analysis:latest'
+        image: 'klangkk/stock-analysis:latest'
         run: |
           kedro run
