@@ -23,6 +23,6 @@ jobs:
     - name: Run Docker image
       uses: addnab/docker-run-action@v3
       with:
-        image: 'klangkk/stock-analysisb:latest'
+        image: 'klangkk/stock-analysis:latest'
         run: |
           kedro run
