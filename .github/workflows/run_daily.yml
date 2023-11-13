@@ -2,7 +2,7 @@ name: Kedro pipeline
 
 on:
   schedule:
-    - cron: '40 6 * * *' # This line sets the action to run every day at 14:40 Singapore time (UTC+8)
+    - cron: '55 6 * * *' # This line sets the action to run every day at 14:40 Singapore time (UTC+8)
 
 jobs:
   build:
