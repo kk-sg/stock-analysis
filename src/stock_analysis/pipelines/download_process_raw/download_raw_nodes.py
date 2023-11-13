@@ -67,7 +67,7 @@ def create_code_folder_raw(
             print(f"=== Created Required Folders: {stock['name']} ===")
 
     # create Downlaods folder if not exist
-    dir_path = os.path.join("..", "Downloads")
+    dir_path = os.path.join("..", "..", "Downloads")
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
