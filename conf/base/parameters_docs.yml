@@ -1,0 +1,13 @@
+documentation:
+
+  # put True if want to run jupyter book build else False
+  publish: True
+
+  # put True if want to view the html of the book built else False
+  view_html: True
+
+  # path of folder to build the docs
+  folder_to_build: ./docs/stockinfo
+
+  # abs path of folder for generated html files to view
+  folder_to_view: ./docs/stockinfo/_build/html

@@ -2,10 +2,10 @@
 
 |     | Yield   | Price | Date       |
 |-----|---------|-------|------------|
-| Target | 6.81 |  |  |
-| Current | 3.08 | 38.55  | 2023-11-10 |
-| Max | 7.17 | 23.73  | 2014-02-04 |
-| Min | 1.89 | 63.01  | 2023-02-03 |
+| Target | 6.80 |  |  |
+| Current | 6.25 | 39.80  | 2023-11-24 |
+| Max | 7.41 | 22.96  | 2014-02-04 |
+| Min | 3.40 | 80.73  | 2019-07-05 |
 
 ![Plot of Dividend Yield for Link Real Estate Investment Trust (0823.HK)](0823_div_10.png)
 

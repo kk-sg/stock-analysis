@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import subprocess
+from subprocess import CalledProcessError
 from kedro.pipeline import Pipeline, node, pipeline
 from typing import Dict, List
 from datetime import datetime
@@ -44,6 +45,7 @@ def report_info_pipeline(**kwargs) -> Pipeline:
             node(
                 func=jupyter_book_build_node,
                 inputs=[
+                    "params:documentation",
                     "dummy_update_toc_yml_pipeline_sequencer",
                 ],
                 outputs=None,
@@ -53,9 +55,48 @@ def report_info_pipeline(**kwargs) -> Pipeline:
     )
 
 
-def jupyter_book_build_node(dummy_sequencer: str = "") -> None:
-    command = ["jupyter-book", "build", "./docs/stockinfo"]
-    subprocess.run(command, check=True)
+def jupyter_book_build_node(
+    params: Dict[str, str],
+    dummy_sequencer: str = "",
+) -> None:
+    # If the 'publish' key is True, build the Jupyter book
+    if params["publish"]:
+        command = ["jupyter-book", "build", "./docs/stockinfo"]
+        subprocess.run(command, check=True)
+
+    # If the 'view_html' key is True, run the built Jupyter book in a Docker container
+    if params["view_html"]:
+        # Get the absolute path of the folder containing the built HTML files
+        docker_mounting_html_folder = os.path.abspath(params["folder_to_view"])
+
+        # Define the Docker container directory as read-only
+        docker_container_dir_read_only = "/usr/share/nginx/html:ro"
+
+        # Define the Docker mount as read-only
+        docker_mount_read = (
+            f"{docker_mounting_html_folder}:{docker_container_dir_read_only}"
+        )
+
+        # Define the Docker command to run the Docker container
+        docker_command = [
+            "docker",
+            "run",
+            "-d",
+            "-p",
+            "8080:80",
+            "-v",
+            docker_mount_read,
+            "nginx:latest",
+        ]
+
+        # Run the Docker command
+        try:
+            subprocess.run(docker_command, check=True)
+        except CalledProcessError:
+            print("Opening firefox browser")
+
+        # launch firefox
+        subprocess.run(["firefox", "http://localhost:8080"], check=True)
 
 
 def update_toc_yml(

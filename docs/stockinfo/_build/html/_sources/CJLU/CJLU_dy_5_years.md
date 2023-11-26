@@ -2,10 +2,10 @@
 
 |     | Yield   | Price | Date       |
 |-----|---------|-------|------------|
-| Target | 8.28 |  |  |
-| Current | 3.14 | 0.83  | 2023-11-10 |
-| Max | 8.28 | 0.60  | 2019-01-01 |
-| Min | 2.96 | 0.88  | 2023-05-23 |
+| Target | 7.57 |  |  |
+| Current | 6.43 | 0.82  | 2023-11-24 |
+| Max | 8.55 | 0.58  | 2019-01-01 |
+| Min | 5.64 | 0.91  | 2021-11-23 |
 
 ![Plot of Dividend Yield for NetLink NBN Trust (CJLU.SI)](CJLU_div_5.png)
 

@@ -3,11 +3,11 @@
 |     | PB   | Price | Date       |
 |-----|------|-------|------------|
 | Target | 0.73 | 1.71  |  |
-| Current | 1.48 | 3.46  | 2023-11-10 |
+| Current | 1.53 | 3.57  | 2023-11-24 |
 | Min | 0.73 | 1.25  | 2014-02-06 |
 | Max | 2.10 | 4.90  | 2022-01-04 |
 
-Last updated: 2023-11-10
+Last updated: 2023-11-24
 
 ![Plot of Price-Book ratio for Parkway Life Real Estate Investment Trust (C2PU.SI)](C2PU_pb_10.png)
 
